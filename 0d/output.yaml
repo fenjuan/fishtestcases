@@ -1,0 +1,7 @@
+fish-0d:
+   title: fish-test-0d
+   time_unit: day
+   time_step: 1
+   sync_interval: 0
+   variables:
+      - source: *

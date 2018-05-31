@@ -1,0 +1,32 @@
+!-------------------------------------------------------------------------------
+! scalar or profile data
+!-------------------------------------------------------------------------------
+! variable       [string]
+!                  name of variable - instance_varname[_streamname]
+! file           [string]
+!                  file name
+! index          [integer]
+!                  column # in file
+! relax_tau      [float, unit = s]
+!                  relaxation time
+! constant_value [float]
+!                  constant variable value
+!-------------------------------------------------------------------------------
+
+&observations
+   variable = 'zooplankton_sDZoo',
+   constant_value = 2.0
+   relax_tau = 14400
+/
+
+&observations
+   variable = 'zooplankton_sNZoo',
+   constant_value = 0.2
+   relax_tau = 14400
+/
+&observations
+   variable = 'zooplankton_sPZoo',
+   constant_value = 0.02
+   relax_tau = 14400
+/
+

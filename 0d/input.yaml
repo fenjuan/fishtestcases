@@ -1,0 +1,14 @@
+#    constant_value: 0.001
+#    file: PATH_TO_TIME_SERIES_FILE
+#    [column: COLUMN_IN_TIME_SERIES_FILE]
+wind_speed:
+    constant_value: 3.0
+bottom_stress:
+    file: env_2m.dat
+    column: 4
+temperature:
+    constant_value: 20
+#    file: env_2m.dat
+#    column: 2
+zoooplankton_sDZoo:
+    constant_value: 5.0
