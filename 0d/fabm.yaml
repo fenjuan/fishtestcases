@@ -419,7 +419,7 @@ instances:
       cTmOptFish: 25.0                                           # optimal temperature of zoo- and benthivorous fish (degree C), default = 25.0
       cSigTmFish: 10.0                                           # temperature constant of fish (sigma in Gaussian curve) (degree C), default = 10.0
       cDayReprFish: 120.0                                        # reproduction day of year for fish ([-]), default = 120.0
-      cDayAgeFish: 365.0                                         # aging day of year for fish ([-]), default = 365.0
+      cDayAgeFish: 340.0                                         # aging day of year for fish ([-]), default = 365.0
       fReprFish: 0.02                                            # yearly reproduction fraction of benthivorous fish, ([-]), default = 0.02
       fAgeFish: 0.5                                              # yearly ageing fraction of zooplanktivorous fish, ([-]), default = 0.5
       kDAssFiJv: 0.12                                            # maximum assimilation rate of zooplanktivorous fish (d-1), default = 0.12
@@ -458,6 +458,10 @@ instances:
       cRelVegFish: 0.009                                         # decrease of fish feeding per macrophytes cover (max. 0.01) ([-]), default = 0.009
       kDAssFiAd: 0.06                                            # maximum assimilation rate of adult fish (d-1), default = 0.06
       hDBentFiAd: 2.5                                            # half-saturation constant for zoobenthos on adult fish (g m-2), default = 2.5
+      PredPisc: 2
+      cEffPisc: 0.01
+      cVulFiJv: 0.6
+      cVulFiAd: 0.7
     initialization:
       sDFiJv: 0.25                                               # zooplanktivorous fish dry weight (gDW m-2)
       sPFiJv: 0.0055                                             # zooplanktivorous fish phosphorus content (gP m-2)
@@ -465,7 +469,7 @@ instances:
       sDFiAd: 1.0                                                # benthivorous fish dry weight (gDW m-2)
       sPFiAd: 0.022                                              # benthivorous fish phosphorus content (gP m-2)
       sNFiAd: 0.1                                                # benthivorous fish nitrogen content (gN m-2)
-      sDPisc: 0.005                                              # piscivorous fish dry weight (gDW m-2)
+      sDPisc: 0.5                                              # piscivorous fish dry weight (gDW m-2)
     coupling:
       POM_DW_pool_water: abiotic_water/sDPOMW                    # POM DW pool in water (g m-3)
       POM_N_pool_water: abiotic_water/sNPOMW                     # POM N pool in water (g m-3)
@@ -483,6 +487,33 @@ instances:
       zoobenthos_P_Food: zoobenthos/sPBent                       # zoobenthos P Food (g m-3)
       macrophytes_coverage: macrophytes/aCovVeg                  # macrophytes coverage ([-])
       submerged_macrophytes: macrophytes/aDSubVeg                # submerged macrophytes dry weight (g m-2)
+#  foraging_arena_dry_weight:
+#    long_name: foraging_arena_dry-weight
+#    model: pclake/foraging_arena
+#    parameters:
+#      cEffPred: 1.0 
+#      cVulPrey: 0.9
+#    coupling:
+#      forgaing_arena_prey: fish/sDFiJv
+#      foraging_arena_predator: fish/sDPisc
+#  foraging_arena_nitrogen:
+#    long_name: foraging_arena_nitrogen
+#    model: pclake/foraging_arena
+#    parameters:
+#      cEffPred: 1.0 
+#      cVulPrey: 0.9
+#    coupling:
+#      forgaing_arena_prey: fish/sNFiJv
+#      foraging_arena_predator: fish/sDPisc
+#  foraging_arena_phsphorus:
+#    long_name: foraging_arena_phosphorus
+#    model: pclake/foraging_arena
+#    parameters:
+#      cEffPred: 1.0 
+#      cVulPrey: 0.9
+#    coupling:
+#      forgaing_arena_prey: fish/sPFiJv
+#      foraging_arena_predator: fish/sDPisc
   zoobenthos:
     long_name: zoobenthos
     model: pclake/zoobenthos
@@ -642,7 +673,8 @@ instances:
       green_P_in_sediment: phytoplankton_sediment/sPGrenS        # green P in sediment (g m-2)
       blue_P_in_sediment: phytoplankton_sediment/sPBlueS         # blue-green P in sediment (g m-2)
       macrophytes_DW: macrophytes/sDVeg                          # macrophytes DW (g m-2)
-      adult_fish_DW: fish/sDFiAd                                 # adult fish DW (g m-2)
+#      adult_fish_DW: fish/sDFiAd                                 # adult fish DW (g m-2)
+      adult_fish_DW: zoobenthos/sDBent
       zooplankton_DW: zooplankton/sDZoo                          # zooplankton DW (g m-3)
       zooplankton_P: zooplankton/sPZoo                           # zooplankton P (g m-3)
       zooplankton_N: zooplankton/sNZoo                           # zooplankton N (g m-3)

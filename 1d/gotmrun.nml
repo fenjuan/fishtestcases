@@ -23,8 +23,8 @@
 
 &model_setup
    title = 'PCLake-gotmlake',
-   nlev = 5,
-   dt = 3600.0,
+   nlev = 6,
+   dt = 600.0,
    cnpar = 1.0,
    buoy_method = 1,
 /
@@ -43,10 +43,10 @@
 !-------------------------------------------------------------------------------
 
 &station
-   name = 'PCLake-gotmlake-2m',
+   name = 'PCLake-gotmlake-5m',
    latitude = 56.106,
    longitude = 9.84,
-   depth = 2.0,
+   depth = 5.0,
 /
 
 !-------------------------------------------------------------------------------
@@ -75,7 +75,7 @@
    timefmt = 2,
    MaxN = 800,
    start = '2002-01-01 00:00:00',
-   stop = '2007-03-01 00:00:00',
+   stop = '2007-12-31 00:00:00',
 /
 
 !-------------------------------------------------------------------------------
@@ -122,7 +122,7 @@
    list_fields = .false.,
    out_fmt = 2,
    out_dir = '../../output/.',
-   out_fn = 'pclake-gotmlake-2m',
+   out_fn = 'pclake-gotmlake-5m',
    nfirst = 12,
    nsave = 72,
    sync_out = 0,
@@ -182,4 +182,3 @@
    dsr0 = 0.78,
 /
 
-
