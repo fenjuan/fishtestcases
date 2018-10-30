@@ -1,0 +1,34 @@
+instances:
+  cod:
+    model: au/fish_cohort
+    parameters:
+      Nclasses: 5
+      00:
+        wb:  1.e-1
+      01:
+        wb:  1.e-2
+      02:
+        wb:  1.e-3
+      03:
+        wb:  1.e-4
+      04:
+        wb:  1.e-5
+    initialization:
+      N00: 10
+      r_mass00: 1.
+      i_mass00: 2.
+      N01: 3
+      N02: 5
+      N03: 7
+  herring:
+    model: au/fish_cohort
+    parameters:
+      Nclasses: 4
+      00:
+        wb:  2.e-1
+      01:
+        wb:  2.e-2
+      02:
+        wb:  2.e-3
+      03:
+        wb:  2.e-4
