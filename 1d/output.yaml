@@ -1,8 +1,0 @@
-fish-1d:
-#pclake-gotmlake-2m:
-   title: fish-test-1d
-   time_unit: day
-   time_step: 1
-   sync_interval: 0
-   variables:
-      - source: *
